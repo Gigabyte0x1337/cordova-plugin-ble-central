@@ -54,9 +54,8 @@
             <preference name="bluetooth_restore_state" value="$BLUETOOTH_RESTORE_STATE"/>
         </config-file>
     </platform>
-
     <platform name="android">
-        
+       
         <preference name="ACCESS_BACKGROUND_LOCATION" default="false" />
         
         <config-file target="res/xml/config.xml" parent="/widget">
@@ -79,6 +78,7 @@
         </config-file>
 
         <hook type="after_prepare" src="hooks/after_prepare.js"/>
+        <hook src="plugins/cordova-plugin-ble-central/stripDuplicatePermissions.js" type="after_prepare" />
 
         <source-file src="src/android/BLECentralPlugin.java"
             target-dir="src/com/megster/cordova/ble/central"/>
